@@ -1,6 +1,5 @@
 import View from './views';
 import icons from 'url:../../img/icons.svg'; // importing the icons from the src folder
-// import { Fraction } from 'fractional';
 import fracty from 'fracty';
 
 class RecipeView extends View {
