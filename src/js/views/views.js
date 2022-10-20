@@ -28,16 +28,13 @@ export default class View {
   update(data) {
     this._data = data;
     const newMarkup = this._generateMarkup(); // returns a string
-    // console.log(newMarkup);
     const newDOM = document.createRange().createContextualFragment(newMarkup); // converts a string to a DOM nodelist
-    // console.log(newDOM);
     const newElements = Array.from(newDOM.querySelectorAll('*')); // selecting all elements from the new DOM and converting to an array
     const curElements = Array.from(this._parentElement.querySelectorAll('*'));
 
     // Looping over the newElements and using the index(i) to also loop over the curElements
     newElements.forEach((newEl, i) => {
       const curEl = curElements[i];
-      // console.log(curEl, newEl.isEqualNode(curEl));
 
       // Updates the changed TEXT
       if (

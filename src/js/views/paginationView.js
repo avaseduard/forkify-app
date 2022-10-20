@@ -35,6 +35,7 @@ class PaginationView extends View {
         </button>
       `;
     }
+
     // Last page
     if (curPage === numPages && numPages > 1) {
       return `
@@ -48,7 +49,8 @@ class PaginationView extends View {
         </button>      
       `;
     }
-    // Other page
+
+    // Any other page
     if (curPage < numPages) {
       return `
         <button data-goto="${
@@ -69,6 +71,7 @@ class PaginationView extends View {
         </button>
       `;
     }
+
     // Page 1 and there are NO other pages
     return '';
   }

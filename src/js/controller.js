@@ -11,10 +11,6 @@ import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
 import { MODAL_CLOSE_SEC } from './config.js';
 
-// if (module.hot) {
-//   module.hot.accept();
-// }
-
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1); // getting the id of the recipe from the url's hash
@@ -30,7 +26,7 @@ const controlRecipes = async function () {
     bookmarksView.update(model.state.bookmarks);
 
     // Loading recipe
-    await model.loadRecipe(id); // calling an async function which returns a promise, so we need to await
+    await model.loadRecipe(id);
 
     // Rendering recipe
     recipeView.render(model.state.recipe);
